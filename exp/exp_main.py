@@ -9,6 +9,7 @@ from models import (
     NLinear,
     PatchTST,
     PatchMLP,
+    PatchMLPPE,
 )
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
@@ -43,6 +44,7 @@ class Exp_Main(Exp_Basic):
             "Linear": Linear,
             "PatchTST": PatchTST,
             "PatchMLP": PatchMLP,
+            "PatchMLPPE": PatchMLPPE,
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
